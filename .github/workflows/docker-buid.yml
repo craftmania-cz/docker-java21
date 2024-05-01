@@ -1,10 +1,12 @@
 name: Docker
 
 on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+    push:
+       branches:
+          - main
+    workflow_dispatch:
+    schedule:
+      - cron: '0 0 1 * *' # Every first day of the month
 
 jobs:
   packages:
